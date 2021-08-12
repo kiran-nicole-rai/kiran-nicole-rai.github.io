@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title>Experiment: Meeting</title>
+  <style>
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #444;
+  }
+
+  #zoom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+  }
+
+  #camera {
+    position: absolute;
+    z-index: 2;
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+  }
+
+  #intro {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+    font-size: 17px;
+    z-index: 3;
+  }
+
+  #intro a, #intro a:hover, #intro a:visited
+  {
+    color: #f1f1f1;
+  }
+
+  #start {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    position: fixed;
+    float: right;
+    bottom: 7px;
+    right: 20px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #start:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  </style>
+</head>
+<body>
+  <video hidden id="zoom">
+    <source src="PROJECT_CAMERA_ON.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </source>
+  </video>
+  <video id="camera" autoplay></video>
+  <div id="intro">
+    <h1>Welcome to the experiment!</h1>
+    <p>Hello! My name is <i>Kiran Nicole Rai</i> and I am currently working on my final project as part of the <i>Human-Computer Interaction</i> MSc program at the <i>University of Birmingham</i>. This experiment is under the supervision of <i>Russell Beale</i>, a professor of Human-Computer Interaction at the university. This experiment is a component of my dissertation. Your data and responses will be recorded anonymously and used for research purposes only.</p>
+    <p>For this experiment, you MUST have your webcam on. Your video will not be recorded. You will be a guest in a meeting of four university students and you must pay attention throughout this experiment as you will be asked some questions at the end. The meeting will last for just under 10 minutes and, when the meeting has finished, you will be automatically redirected to a Google Forms page where you will be asked the questions. Once you begin the meeting, you will not be able to fast forward nor rewind it, but you may pause. Upon pausing the meeting, you will not be able to see anything until you press play again. You must NOT refresh the page at any time or you will have to restart the experiment. Do not worry if the meeting sometimes freezes for a few seconds - this is normal. </p>
+    <p>If you have any questions, please feel free to text or email me at <a href="mailto:knr756@student.bham.ac.uk">knr756@student.bham.ac.uk</a>. Please press 'Begin Meeting' whenever you are ready to start the experiment. If you have paused, press 'Play' whenever you are ready to resume the experiment.</p>
+    <button id="start" onclick="startMeeting()">Begin Meeting</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+  const masterWidth = 1920;
+  const masterHeight = 1080;
+  const aspectRatio = masterWidth / masterHeight;
+
+  var camera = $("#camera");
+  var zoom = $("#zoom");
+  var start = $("#start");
+  var intro = $("#intro :not(#start)");
+  var video = zoom.get(0);
+
+  // --- starts the webcam - code block from https://davidwalsh.name/browser-camera
+  // --- also https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fullscreen_video
+
+  if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+          camera.get(0).srcObject = stream;
+          camera.get(0).play();
+      });
+  }
+
+  // --- experiment code starts here
+
+  function startMeeting() {
+      if (video.paused) {
+          video.play();
+          intro.hide();
+          zoom.show();
+          start.html("Pause");
+      } else {
+          video.pause();
+          intro.show();
+          zoom.hide();
+          start.html("Play");
+      }
+  }
+
+  function endMeeting() {
+      zoom.hide();
+      camera.hide();
+      start.hide();
+      alert('The meeting has ended and you will now be redirected to Google Forms to answer some post-meeting questions.');
+      window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSeGlwome4F6dIyerk4nmii07Ho4HdkvXLMMIubND3oUtLbEWA/viewform?usp=sf_link';
+  }
+
+  function placeCamera() {
+      let newRatio = zoom.width() / zoom.height();
+
+      if (newRatio > aspectRatio) {  // bars are in width
+          let videoHeight = Math.floor(zoom.height());
+          let videoWidth = Math.floor (videoHeight * aspectRatio);
+          let offset = (zoom.width() - videoWidth) / 2;
+
+          camera.css("width", videoWidth / 3);
+          camera.css("height", videoHeight / 2);
+
+          camera.width(videoWidth / 3);
+          camera.css({ top: videoHeight / 2, left: offset + videoWidth / 3 });
+      } else {  // bars are in height
+
+          let videoWidth = Math.floor(zoom.width());
+          let videoHeight = Math.floor (videoWidth / aspectRatio);
+          let offset = (zoom.height() - videoHeight) / 2;
+
+          camera.css("width", videoWidth / 3);
+          camera.css("height", videoHeight / 2);
+
+          camera.height(videoHeight / 2);
+          camera.css({ top: offset + videoHeight / 2, left: videoWidth / 3 });
+      }
+  }
+
+  video.addEventListener('ended', endMeeting);
+  $(window).resize(placeCamera);
+  placeCamera();
+
+  </script>
+</body>
+</html>

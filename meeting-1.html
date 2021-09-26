@@ -98,7 +98,6 @@
   var video = zoom.get(0);
 
   // --- starts the webcam - code block from https://davidwalsh.name/browser-camera
-  // --- also https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fullscreen_video
 
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {

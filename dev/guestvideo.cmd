@@ -1,0 +1,13 @@
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 26 -pix_fmt yuv420p -vf scale=640:540 guest_1-4.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 23 -pix_fmt yuv420p -vf scale=640:540 guest_6-8.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 70 -pix_fmt yuv420p -vf scale=640:540 guest_9-13.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 92 -pix_fmt yuv420p -vf scale=640:540 guest_14-20.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 27 -pix_fmt yuv420p -vf scale=640:540 guest_21-23.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 39 -pix_fmt yuv420p -vf scale=640:540 guest_25-28.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 99 -pix_fmt yuv420p -vf scale=640:540 guest_29-32.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 27 -pix_fmt yuv420p -vf scale=640:540 guest_33.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 54 -pix_fmt yuv420p -vf scale=640:540 guest_34-35.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 16 -pix_fmt yuv420p -vf scale=640:540 guest_36.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 29 -pix_fmt yuv420p -vf scale=640:540 guest_37.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 15 -pix_fmt yuv420p -vf scale=640:540 guest_38-39.mp4
+ffmpeg -loop 1 -i guest.png -c:v libx264 -t 38 -pix_fmt yuv420p -vf scale=640:540 guest_40-42.mp4

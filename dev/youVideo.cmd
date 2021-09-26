@@ -1,0 +1,13 @@
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 26 -pix_fmt yuv420p -vf scale=640:540 you_1-4.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 23 -pix_fmt yuv420p -vf scale=640:540 you_6-8.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 70 -pix_fmt yuv420p -vf scale=640:540 you_9-13.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 92 -pix_fmt yuv420p -vf scale=640:540 you_14-20.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 27 -pix_fmt yuv420p -vf scale=640:540 you_21-23.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 39 -pix_fmt yuv420p -vf scale=640:540 you_25-28.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 99 -pix_fmt yuv420p -vf scale=640:540 you_29-32.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 27 -pix_fmt yuv420p -vf scale=640:540 you_33.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 54 -pix_fmt yuv420p -vf scale=640:540 you_34-35.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 16 -pix_fmt yuv420p -vf scale=640:540 you_36.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 29 -pix_fmt yuv420p -vf scale=640:540 you_37.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 15 -pix_fmt yuv420p -vf scale=640:540 you_38-39.mp4
+ffmpeg -loop 1 -i youImg.png -c:v libx264 -y -t 38 -pix_fmt yuv420p -vf scale=640:540 you_40-42.mp4

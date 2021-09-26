@@ -1,0 +1,13 @@
+ffmpeg -loop 1 -y -i last1.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last1.mp4
+ffmpeg -loop 1 -y -i last2.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last2.mp4
+ffmpeg -loop 1 -y -i last3.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last3.mp4
+ffmpeg -loop 1 -y -i last4.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last4.mp4
+ffmpeg -loop 1 -y -i last5.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last5.mp4
+ffmpeg -loop 1 -y -i last6.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last6.mp4
+ffmpeg -loop 1 -y -i last7.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last7.mp4
+ffmpeg -loop 1 -y -i last8.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last8.mp4
+ffmpeg -loop 1 -y -i last9.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last9.mp4
+ffmpeg -loop 1 -y -i last10.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last10.mp4
+ffmpeg -loop 1 -y -i last11.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last11.mp4
+ffmpeg -loop 1 -y -i last12.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last12.mp4
+ffmpeg -loop 1 -y -i last13.jpg -c:v libx264 -t 3 -pix_fmt yuv420p -vf scale=640:540 last13.mp4

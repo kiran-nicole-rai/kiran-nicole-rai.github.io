@@ -1,0 +1,13 @@
+ffmpeg -sseof -3 -y -i vid1.mp4 -update 1 -q:v 1 last1.jpg
+ffmpeg -sseof -3 -y -i vid2.mp4 -update 1 -q:v 1 last2.jpg
+ffmpeg -sseof -3 -y -i vid3.mp4 -update 1 -q:v 1 last3.jpg
+ffmpeg -sseof -3 -y -i vid4.mp4 -update 1 -q:v 1 last4.jpg
+ffmpeg -sseof -3 -y -i vid5.mp4 -update 1 -q:v 1 last5.jpg
+ffmpeg -sseof -3 -y -i vid6.mp4 -update 1 -q:v 1 last6.jpg
+ffmpeg -sseof -3 -y -i vid7.mp4 -update 1 -q:v 1 last7.jpg
+ffmpeg -sseof -3 -y -i vid8.mp4 -update 1 -q:v 1 last8.jpg
+ffmpeg -sseof -3 -y -i vid9.mp4 -update 1 -q:v 1 last9.jpg
+ffmpeg -sseof -3 -y -i vid10.mp4 -update 1 -q:v 1 last10.jpg
+ffmpeg -sseof -3 -y -i vid11.mp4 -update 1 -q:v 1 last11.jpg
+ffmpeg -sseof -3 -y -i vid12.mp4 -update 1 -q:v 1 last12.jpg
+ffmpeg -sseof -3 -y -i vid3.mp4 -update 1 -q:v 1 last13.jpg

@@ -1,0 +1,19 @@
+prabs video
+start pixels: 16 , 126 px (68 , 126)
+width: 431, 126 px (415) (379 , 126)
+height: 68 , 359 px (233)
+
+isaacs video
+start pixels: 848 , 126 px
+width: 1263 , 126 px (415)
+height: 848 , 359 px (233)
+
+oyins video
+start pixels: 224 , 360 px
+width: 639 , 360 px (415)
+height: 224 , 593 px (233)
+
+himaas' video
+start pixels: 640 , 360 px
+width: 1055 , 360 px (415)
+height: 640 , 593 px (233)
